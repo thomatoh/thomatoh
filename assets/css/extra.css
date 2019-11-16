@@ -1,0 +1,54 @@
+#stack {
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+    height: 20rem;
+    width: 12rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#demo {
+    margin: 5rem 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+#demo button {
+    margin: 0 2rem;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-25rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-25rem);
+    }
+}
+
+#stack div {
+    width: 90%;
+    height: 20%;
+    background: white;
+    margin: 3% auto;
+    animation: slide-down 1s ease;
+}
+
+#stack div:first-child {
+    margin: 3% auto 6% auto;
+}
