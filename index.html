@@ -39,10 +39,6 @@
 							<li><a href="#" class="button fit">Log In</a></li>
 						</ul>
 					</nav>
-					<nav id="submit-modal">
-						<h1>Thank you for your Inquiry!</h1>
-					</nav>
-
 				<!-- Banner -->
 					<section id="banner" class="major">
 						<div class="inner">
@@ -228,8 +224,8 @@
 					SecureToken : "e5c33b47-1242-466d-bfbc-695dfe5a408e",
 					To : 'soaptubby@yahoo.com',
 					From : 'thomashuynh927@gmail.com',
-					Subject : "Inquiry from " + name,
-					Body : body + 'Please reach me with my email: ' + email
+					Subject : "Inquiry from " + name + ".",
+					Body : body + ' Please reach me with my email: ' + email
 				}).then(
 				  message => console.log(message)
 				); 
