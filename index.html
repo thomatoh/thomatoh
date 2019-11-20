@@ -39,6 +39,9 @@
 							<li><a href="#" class="button fit">Log In</a></li>
 						</ul>
 					</nav>
+					<nav id="submit-modal">
+						<h1>Thank you for your Inquiry!</h1>
+					</nav>
 
 				<!-- Banner -->
 					<section id="banner" class="major">
@@ -97,7 +100,11 @@
 									<span class="image">
 										<img src="images/yosemite.jpg" alt="bluefin image" />
 									</span>
-	
+									<header class="major">
+										<h3><a href="https://codepen.io/xientist/pen/QWWVaWa" class="link">The Great Outdoors</a></h3>
+										<p>I am also afflicted with a severe case of wanderlust! My ideal travel destinations involves hiking in the wonders of Earth and wrangling with the mightiest boulders.
+										</p>
+									</header>
 								</article>
 							</section>
 							<section>
@@ -149,11 +156,12 @@
 											<textarea name="message" id="message" rows="6"></textarea>
 										</div>
 									</div>
-									<ul class="actions">
+									<!-- <ul class="actions">
 										<li><input type="submit" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Clear" /></li>
-									</ul>
+									</ul> -->
 								</form>
+								<button id="test-button">Submit</button>
 							</section>
 							<section class="split">
 								<section>
@@ -209,6 +217,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			<script>
 
+			document.querySelector("#test-button").addEventListener("click", () => {
+				var name = document.getElementById("name").value;
+				var email = document.getElementById("email").value;
+				var body = document.getElementById("message").value;
+				Email.send({
+					SecureToken : "e5c33b47-1242-466d-bfbc-695dfe5a408e",
+					To : 'soaptubby@yahoo.com',
+					From : 'thomashuynh927@gmail.com',
+					Subject : "Inquiry from " + name,
+					Body : body + 'Please reach me with my email: ' + email
+				}).then(
+				  message => console.log(message)
+				); 
+			})
+			</script>
 	</body>
 </html>
